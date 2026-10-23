@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ching Hsieh</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=4">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -444,7 +444,38 @@
       z-index: 1;
     }
 
-    /* ── FOOTER ── */
+    /* ── MEMBERSHIPS ── */
+    .memberships {
+      background: var(--cream);
+      padding: 28px 24px 25px;
+    }
+
+    .memberships ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 39px;
+      flex-wrap: wrap;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .memberships a {
+      display: flex;
+      align-items: center;
+      line-height: 0;
+    }
+
+    .memberships img {
+      display: block;
+      width: auto;
+    }
+
+    .memberships .logo-12 { height: 38px; }
+    .memberships .logo-scbwi { height: 73px; }
+    .memberships .logo-pb { height: 87px; }
+    .memberships .logo-punctual { height: 59px; }
     footer {
       text-align: center;
       padding: 40px 24px;
@@ -568,6 +599,19 @@
         max-width: none;
       }
 
+      .memberships {
+        padding: 22px 16px 20px;
+      }
+
+      .memberships ul {
+        gap: 20px 14px;
+      }
+
+      .memberships .logo-12 { height: 28px; }
+      .memberships .logo-scbwi { height: 53px; }
+      .memberships .logo-pb { height: 64px; }
+      .memberships .logo-punctual { height: 43px; }
+
       .ig-section {
         padding: 12px 16px 56px;
       }
@@ -616,7 +660,7 @@
           <li>Coffee or tea? BOTH. If you've never tried this combo, look up the beverage "yuenyeung."</li>
           <li>My palms sweat chronically, no matter my mood.</li>
           <li>One of my first jobs was at Borders Books &amp; Music.
-          <li>During college, I had an internship at a boutique literary agency where I read and evaluated slush pile manuscripts.</li></li>
+          <li>I read and evaluated slush pile manuscripts during a college internship at a boutique literary agency.</li></li>
         </ul>
       </div>
     </div>
@@ -629,7 +673,7 @@
         <p class="section-heading">Author's Bio</p>
         <p>It's lovely to meet you! Thanks for visiting my page.</p>
         <p>I'm a pre-published kidlit author living in Montréal with my husband, twin girls, and two very opinionated rescue dogs. I've been lucky to call the San Francisco Bay Area, Los Angeles, New York City, and Taiwan home before moving to Canada.</p>
-        <p>I've always been a visual thinker, which took me down a decade-long career path designing user experiences for emerging tech. As AI encroaches and rapidly transforms that industry, I find myself pivoting to storytelling, scratching the itch to create through deep thought and imagination.</p>
+        <p>I've always been a visual thinker, which took me down a decade-long career path designing user experiences for emerging tech. As AI encroaches and rapidly transforms that industry, I find myself pivoting to stories, crafting them through deep thought and imagination.</p>
         <p>Growing up as a third-culture kid, I turned to books as a lifeline for learning about different cultures, identities, perspectives, and philosophies. As a writer, I aim to create worlds where kids can lose themselves and find a sense of belonging along the way.</p>
       </div>
       <div class="about-sidebar">
@@ -652,7 +696,7 @@
   <div class="books-section-wrap">
     <section class="books-section">
       <p class="section-heading">Books That Defined Me</p>
-      <p class="books-intro">A collection of childhood favorites that to this day still elicit an emotional response or vivid memories.</p>
+      <p class="books-intro">A collection of childhood favorites that still to this day elicit an emotional response or vivid memories.</p>
       <div class="books-grid">
         <img class="book-cover" src="covers/where-the-sidewalk-ends.jpg" alt="Cover of Where the Sidewalk Ends by Shel Silverstein" loading="lazy">
         <img class="book-cover" src="covers/meet-samantha.jpg" alt="Cover of Meet Samantha: An American Girl by Susan S. Adler" loading="lazy">
@@ -664,8 +708,8 @@
         <img class="book-cover" src="covers/kristys-great-idea.jpg" alt="Cover of Kristy's Great Idea by Ann M. Martin" loading="lazy">
         <img class="book-cover" src="covers/madeline.jpg" alt="Cover of Madeline by Ludwig Bemelmans" loading="lazy">
         <img class="book-cover" src="covers/bart-simpsons-guide.jpg" alt="Cover of Bart Simpson's Guide to Life by Matt Groening" loading="lazy">
+        <img class="book-cover" src="covers/mr-men-little-miss.jpg" alt="Cover of Mr. Men and Little Miss by Roger Hargreaves" loading="lazy">
         <img class="book-cover" src="covers/doraemon.jpg" alt="Cover of Doraemon, Vol. 1 by Fujiko F. Fujio" loading="lazy">
-        <img class="book-cover" src="covers/boys-over-flowers.jpg" alt="Cover of Boys Over Flowers, Vol. 1 by Yoko Kamio" loading="lazy">
         <img class="book-cover" src="covers/goosebumps.jpg" alt="Cover of Goosebumps: Welcome to Dead House by R.L. Stine" loading="lazy">
         <img class="book-cover" src="covers/wrinkle-in-time.jpg" alt="Cover of A Wrinkle in Time by Madeleine L'Engle" loading="lazy">
         <img class="book-cover" src="covers/sorcerers-stone.jpg" alt="Cover of Harry Potter and the Sorcerer's Stone by J.K. Rowling" loading="lazy">
@@ -723,6 +767,30 @@
     </div>
   </section>
   </div>
+
+  <!-- MEMBERSHIPS -->
+  <section class="memberships" aria-label="Memberships">
+    <ul>
+      <li>
+        <a href="https://12x12challenge.com/" target="_blank" rel="noopener">
+          <img class="logo-12" src="logos/12x12.png" alt="12 x 12 Challenge">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.scbwi.org/" target="_blank" rel="noopener">
+          <img class="logo-scbwi" src="logos/scbwi.png" alt="Society of Children's Book Writers and Illustrators">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.pbrisingstars.com/" target="_blank" rel="noopener">
+          <img class="logo-pb" src="logos/pb-rising-stars.jpg" alt="PB Rising Stars, 2026 Honorable Mention">
+        </a>
+      </li>
+      <li>
+        <img class="logo-punctual" src="logos/punctual-writers.png" alt="The Punctual Writers">
+      </li>
+    </ul>
+  </section>
 
   <!-- FOOTER -->
   <footer>
