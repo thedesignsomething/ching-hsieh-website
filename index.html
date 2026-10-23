@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ching Hsieh</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Teal and coral from the La Récré reference, deepened for contrast */
+      --cream: #fefaf9;
+      --cream2: #f8efe9;
+      --cream3: #efd5c8;
+      --surface: #fffdfb;
+      --quote-bg: #f8e4d8;
+      --teal: #0c3e46;
+      --coral: #c44522;
+      --coral-deep: #a33a1c;
+      --terra: var(--coral);
+      --terra-lt: var(--coral-deep);
+      --sage: #1f5c66;
+      --ink: var(--teal);
+      --ink-mid: #1f5c66;
+      --ink-lt: #2f636c;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream3);
+    }
+
+    .nav-name {
+      font-family: var(--sans);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .alt-name span:nth-child(odd) {
+      color: var(--teal);
+    }
+
+    .alt-name span:nth-child(even) {
+      color: var(--coral);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--coral);
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--coral-deep);
+    }
+
+    /* ── HERO ── */
+    .hero-section {
+      background: var(--cream);
+    }
+
+    .hero {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 64px 24px 64px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--quote-bg);
+      border: 1px solid var(--cream3);
+      border-radius: 20px;
+      padding: 8px 18px;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .hero-photo-wrap {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 36px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.7) translate(-4%, 16%);
+      transform-origin: center center;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: 88px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .hero p {
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #FFFFFF;
+      padding: 14px 30px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: background 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #164852;
+    }
+
+    /* ── FUN FACTS ── */
+    .facts-section {
+      background: var(--quote-bg);
+      border-top: 1px solid var(--cream3);
+      border-bottom: 1px solid var(--cream3);
+      padding: 72px 48px;
+    }
+
+    .facts-inner {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .facts-img-wrap {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .facts-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .facts-copy {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .facts-section .section-heading {
+      color: var(--coral);
+      margin-bottom: 18px;
+    }
+
+    .facts-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .facts-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+
+    .facts-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terra);
+    }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      background: var(--cream);
+      border-top: 1px solid var(--cream3);
+      border-bottom: 1px solid var(--cream3);
+      padding: 64px 48px;
+      scroll-margin-top: 24px;
+    }
+
+    .about-columns {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 56px;
+      align-items: flex-start;
+    }
+
+    .about-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .about-sidebar {
+      flex: 0 0 260px;
+    }
+
+    .about-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--terra);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-heading,
+    p.section-heading {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--terra);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .about-body p {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .about-body strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .about-body p.section-heading {
+      font-weight: 500;
+      color: var(--terra);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--quote-bg);
+      border: 1px solid var(--cream3);
+      border-radius: 20px;
+      padding: 8px 18px;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+
+    /* ── BOOKS THAT DEFINED ME ── */
+    .books-section-wrap {
+      background: var(--quote-bg);
+      border-top: 1px solid var(--cream3);
+      border-bottom: 1px solid var(--cream3);
+    }
+
+    .books-section {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 64px 24px 72px;
+      text-align: center;
+    }
+
+    .books-section .section-heading {
+      margin-bottom: 12px;
+      color: var(--coral);
+    }
+
+    .books-intro {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0 auto 40px;
+    }
+
+    .books-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px 20px;
+      align-items: center;
+    }
+
+    .book-cover {
+      width: calc((100% - 60px) / 4);
+      max-width: 160px;
+      height: auto;
+      border-radius: 2px;
+      box-shadow: 0 8px 20px rgba(12, 62, 70, 0.1);
+      flex: 0 0 auto;
+      display: block;
+    }
+
+    /* ── INSTAGRAM GRID ── */
+    .ig-section-wrap {
+      display: none;
+      background: #ffffff;
+    }
+
+    .ig-section {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    .ig-section .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--coral);
+    }
+
+    .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .ig-cell {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 4px;
+      position: relative;
+      background: var(--cream3);
+    }
+
+    .ig-cell iframe {
+      width: 300%;
+      height: calc(300% + 100px);
+      transform: scale(0.3333) translateY(-65px);
+      transform-origin: 0 0;
+      border: none;
+      pointer-events: none;
+      display: block;
+    }
+
+    .ig-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .ig-cell:hover .ig-hover-shade {
+      opacity: 1;
+    }
+
+    .ig-hover-shade {
+      position: absolute;
+      inset: 0;
+      background: rgba(12, 62, 70, 0.16);
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.03em;
+      color: var(--ink-lt);
+      border-top: 1px solid var(--cream3);
+      background: var(--cream);
+    }
+
+    .footer-handle {
+      color: var(--terra);
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .footer-handle:hover {
+      color: var(--terra-lt);
+    }
+
+    .footer-ig {
+      display: inline-block;
+      color: var(--terra);
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .footer-ig svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--terra);
+      transition: fill 0.15s;
+    }
+
+    .footer-ig:hover svg {
+      fill: var(--terra-lt);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav {
+        padding: 22px 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+      }
+
+      .hero-photo-wrap {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary {
+        width: 260px;
+        text-align: center;
+      }
+
+      .facts-section {
+        padding: 48px 24px;
+      }
+
+      .facts-inner {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .facts-img-wrap {
+        width: 220px;
+        height: 220px;
+      }
+
+      .facts-copy {
+        width: 100%;
+        max-width: 420px;
+      }
+
+      .about-strip {
+        padding: 48px 24px;
+      }
+
+      .about-columns {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .about-sidebar {
+        flex: none;
+        width: 100%;
+      }
+
+      .tags {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .books-section {
+        padding: 48px 16px 56px;
+      }
+
+      .books-grid {
+        gap: 14px;
+      }
+
+      .book-cover {
+        width: calc((100% - 14px) / 2);
+        max-width: none;
+      }
+
+      .ig-section {
+        padding: 12px 16px 56px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name" aria-label="Ching Hsieh"><span class="alt-name" aria-hidden="true"><span>C</span><span>h</span><span>i</span><span>n</span><span>g</span> <span>H</span><span>s</span><span>i</span><span>e</span><span>h</span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero">
+      <div class="badge">Visual Thinker &amp; Storyteller</div>
+      <div class="hero-photo-wrap">
+        <img src="headshot.jpg" alt="Ching Hsieh" class="hero-photo">
+      </div>
+      <h1>Hi, I'm <em>Ching.</em></h1>
+      <p>A Taiwanese American writer living in Canada.<br/>Join me on my writing journey!</p>
+      <div class="hero-btns">
+        <a href="#about" class="btn-primary">About me →</a>
+        <a href="https://www.instagram.com/wordsbyching/" target="_blank" rel="noopener" class="btn-primary">Follow on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUN FACTS -->
+  <section class="facts-section">
+    <div class="facts-inner">
+      <div class="facts-img-wrap">
+        <img src="small-bouquet.jpg" alt="Small bouquet of wildflowers" class="facts-img">
+      </div>
+      <div class="facts-copy">
+        <p class="section-heading">Fun Facts</p>
+        <ul class="facts-list">
+          <li>I prefer a bookshelf organized by colors of the rainbow.</li>
+          <li>My favorite season is summer, though my birthday and favorite holiday falls in autumn.</li>
+          <li>I like my breakfasts salty, and dinners with something sweet.</li>
+          <li>Coffee or tea? BOTH. If you've never tried this combo, look up the beverage "yuenyeung."</li>
+          <li>My palms sweat chronically, no matter my mood.</li>
+          <li>One of my first jobs was at Borders Books &amp; Music.
+          <li>During college, I had an internship at a boutique literary agency where I read and evaluated slush pile manuscripts.</li></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip" id="about">
+    <div class="about-columns">
+      <div class="about-body">
+        <p class="section-heading">Author's Bio</p>
+        <p>It's lovely to meet you! Thanks for visiting my page.</p>
+        <p>I'm a pre-published kidlit author living in Montréal with my husband, twin girls, and two very opinionated rescue dogs. I've been lucky to call the San Francisco Bay Area, Los Angeles, New York City, and Taiwan home before moving to Canada.</p>
+        <p>I've always been a visual thinker, which took me down a decade-long career path designing user experiences for emerging tech. As AI encroaches and rapidly transforms that industry, I find myself pivoting to storytelling, scratching the itch to create through deep thought and imagination.</p>
+        <p>Growing up as a third-culture kid, I turned to books as a lifeline for learning about different cultures, identities, perspectives, and philosophies. As a writer, I aim to create worlds where kids can lose themselves and find a sense of belonging along the way.</p>
+      </div>
+      <div class="about-sidebar">
+        <p class="about-label">What I Write</p>
+        <div class="tags">
+          <span class="tag">Commercial &amp; High-Concept</span>
+          <span class="tag">Contemporary</span>
+          <span class="tag">Cultural</span>
+          <span class="tag">Informational Fiction</span>
+          <span class="tag">Lyrical &amp; Atmospheric</span>
+          <span class="tag">Magic Realism &amp; Whimsy</span>
+          <span class="tag">Neurodiversity &amp; Inclusion</span>
+          <span class="tag">Social &amp; Emotional Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS THAT DEFINED ME -->
+  <div class="books-section-wrap">
+    <section class="books-section">
+      <p class="section-heading">Books That Defined Me</p>
+      <p class="books-intro">A collection of childhood favorites that to this day still elicit an emotional response or vivid memories.</p>
+      <div class="books-grid">
+        <img class="book-cover" src="covers/where-the-sidewalk-ends.jpg" alt="Cover of Where the Sidewalk Ends by Shel Silverstein" loading="lazy">
+        <img class="book-cover" src="covers/meet-samantha.jpg" alt="Cover of Meet Samantha: An American Girl by Susan S. Adler" loading="lazy">
+        <img class="book-cover" src="covers/alice-in-wonderland.jpg" alt="Cover of Alice's Adventures in Wonderland by Lewis Carroll" loading="lazy">
+        <img class="book-cover" src="covers/lion-witch-wardrobe.jpg" alt="Cover of The Lion, the Witch and the Wardrobe by C.S. Lewis" loading="lazy">
+        <img class="book-cover" src="covers/matilda.jpg" alt="Cover of Matilda by Roald Dahl" loading="lazy">
+        <img class="book-cover" src="covers/freckle-juice.jpg" alt="Cover of Freckle Juice by Judy Blume" loading="lazy">
+        <img class="book-cover" src="covers/sideways-stories-wayside.jpg" alt="Cover of Sideways Stories from Wayside School by Louis Sachar" loading="lazy">
+        <img class="book-cover" src="covers/kristys-great-idea.jpg" alt="Cover of Kristy's Great Idea by Ann M. Martin" loading="lazy">
+        <img class="book-cover" src="covers/madeline.jpg" alt="Cover of Madeline by Ludwig Bemelmans" loading="lazy">
+        <img class="book-cover" src="covers/bart-simpsons-guide.jpg" alt="Cover of Bart Simpson's Guide to Life by Matt Groening" loading="lazy">
+        <img class="book-cover" src="covers/doraemon.jpg" alt="Cover of Doraemon, Vol. 1 by Fujiko F. Fujio" loading="lazy">
+        <img class="book-cover" src="covers/boys-over-flowers.jpg" alt="Cover of Boys Over Flowers, Vol. 1 by Yoko Kamio" loading="lazy">
+        <img class="book-cover" src="covers/goosebumps.jpg" alt="Cover of Goosebumps: Welcome to Dead House by R.L. Stine" loading="lazy">
+        <img class="book-cover" src="covers/wrinkle-in-time.jpg" alt="Cover of A Wrinkle in Time by Madeleine L'Engle" loading="lazy">
+        <img class="book-cover" src="covers/sorcerers-stone.jpg" alt="Cover of Harry Potter and the Sorcerer's Stone by J.K. Rowling" loading="lazy">
+        <img class="book-cover" src="covers/face-on-the-milk-carton.jpg" alt="Cover of The Face on the Milk Carton by Caroline B. Cooney" loading="lazy">
+        <img class="book-cover" src="covers/strega-nona.jpg" alt="Cover of Strega Nona by Tomie dePaola" loading="lazy">
+        <img class="book-cover" src="covers/alexander.jpg" alt="Cover of Alexander and the Terrible, Horrible, No Good, Very Bad Day by Judith Viorst" loading="lazy">
+        <img class="book-cover" src="covers/corduroy.jpg" alt="Cover of Corduroy by Don Freeman" loading="lazy">
+        <img class="book-cover" src="covers/where-the-wild-things-are.jpg" alt="Cover of Where the Wild Things Are by Maurice Sendak" loading="lazy">
+      </div>
+    </section>
+  </div>
+
+  <!-- INSTAGRAM GRID -->
+  <div class="ig-section-wrap">
+  <section class="ig-section">
+    <p class="section-heading">Social Media Posts</p>
+    <div class="ig-grid">
+
+      <div class="ig-cell">
+        <a class="ig-overlay" href="https://www.instagram.com/p/DZgigOnFDsa/" target="_blank" rel="noopener" aria-label="Instagram post"></a>
+        <div class="ig-hover-shade"></div>
+        <iframe src="https://www.instagram.com/p/DZgigOnFDsa/embed/" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy"></iframe>
+      </div>
+
+      <div class="ig-cell">
+        <a class="ig-overlay" href="https://www.instagram.com/p/DZfhRbdFNTl/" target="_blank" rel="noopener" aria-label="Instagram post"></a>
+        <div class="ig-hover-shade"></div>
+        <iframe src="https://www.instagram.com/p/DZfhRbdFNTl/embed/" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy"></iframe>
+      </div>
+
+      <div class="ig-cell">
+        <a class="ig-overlay" href="https://www.instagram.com/p/DZVBdoKjzWt/" target="_blank" rel="noopener" aria-label="Instagram post"></a>
+        <div class="ig-hover-shade"></div>
+        <iframe src="https://www.instagram.com/p/DZVBdoKjzWt/embed/" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy"></iframe>
+      </div>
+
+      <div class="ig-cell">
+        <a class="ig-overlay" href="https://www.instagram.com/p/DZO7Fjyj20o/" target="_blank" rel="noopener" aria-label="Instagram post"></a>
+        <div class="ig-hover-shade"></div>
+        <iframe src="https://www.instagram.com/p/DZO7Fjyj20o/embed/" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy"></iframe>
+      </div>
+
+      <div class="ig-cell">
+        <a class="ig-overlay" href="https://www.instagram.com/p/DZICY1qj7Hz/" target="_blank" rel="noopener" aria-label="Instagram post"></a>
+        <div class="ig-hover-shade"></div>
+        <iframe src="https://www.instagram.com/p/DZICY1qj7Hz/embed/" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy"></iframe>
+      </div>
+
+      <div class="ig-cell">
+        <a class="ig-overlay" href="https://www.instagram.com/p/DY7AnY4j6PH/" target="_blank" rel="noopener" aria-label="Instagram post"></a>
+        <div class="ig-hover-shade"></div>
+        <iframe src="https://www.instagram.com/p/DY7AnY4j6PH/embed/" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy"></iframe>
+      </div>
+
+    </div>
+  </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="https://www.instagram.com/wordsbyching/" target="_blank" rel="noopener" class="footer-ig" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/wordsbyching/" target="_blank" rel="noopener" class="footer-handle">Find me on social media @wordsbyching</a>
+    <span>© 2026 Ching Hsieh</span>
+  </footer>
+
+</body>
+</html>

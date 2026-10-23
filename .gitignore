@@ -1,0 +1,6 @@
+# Netlify CLI link state. The live site is published from git, not from here.
+.netlify/
+
+# Local leftovers that are not part of the site.
+*.bak
+favicon-preview.png
